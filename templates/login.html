@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="container">
+        <br method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+                {% if messages %}
+    <div class="alert alert-danger">
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </div>
+            {% endif %}
+            <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Login</button>
+            Don't have an account?
+            <a href="{% url 'register' %}" target="blank"><strong>Register here?</strong></a>
+
+            <a href="{% url 'forgotpassword' %}" target="blank"><strong>Forgot password?</strong></a>
+        </form>
+    </div>
+
+{% endblock %}

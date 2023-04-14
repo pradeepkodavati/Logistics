@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  <h2>Route Details</h2>
+  <p><strong>Vehicle Number:</strong> {{ route.vehicleNumber }}</p>
+  <p><strong>Route:</strong> {{ route.route }}</p>
+  <p><strong>Status:</strong> {{ route.status }}</p>
+  <p><strong>Destination:</strong> {{ route.destination }}</p>
+  <p><strong>Team:</strong> {{ route.team }}</p>
+  <a style="background-color:#F4EB16; color:blue" class="btn btn-outline-info"  href="{% url 'home' %}">Back to List</a>
+{% endblock %}
